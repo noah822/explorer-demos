@@ -1,0 +1,16 @@
+0, nothing
+1,  # chair
+2,  # couch
+3,  # plant
+4,  # bed
+5,  # toilet
+6,  # tv
+7,  # table
+8,  # oven
+9,  # sink
+10,  # refrigerator
+11,  # book
+12,  # clock
+13,  # vase
+14,  # cup
+15,  # bottle
