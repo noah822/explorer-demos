@@ -13,7 +13,6 @@ from typing import Dict, Tuple, List, Union
 
 from explorer.transforms.camera import CameraTransformer
 from explorer.transforms.voxel import splat_feature
-from explorer.visual import TopDownMap
 from explorer_prelude import *
 
 from core.interfaces import Observations
@@ -29,12 +28,9 @@ from explorer.environ.utils import inspect_environ
 
 from explorer.transforms.camera import CameraTransformer
 from explorer.transforms.voxel import splat_feature
-from explorer.visual import TopDownMap
-from explorer.visual.constants import TOP_DOWN_MAP_COLOR_MAP 
-TOP_DOWN_MAP_COLOR_MAP['unexplorered'] = [255, 255, 255]
 
 WINDOW_NAME = 'view'
-TOPDOWN_MAP_NAME = 'bird-eye-view'
+
 CENTIMETER = int
 METER = float
 DEGREE = float; RADIUS = float
@@ -46,8 +42,7 @@ class Memory:
     voxel_map: np.ndarray
     # scene_pixel_features: np.ndarray
     def update_voxel_map(self, new_voxel_map):
-        np.maximum(self.voxel_map, new_voxel_map, self.voxel_map) 
-
+        np.maximum(self.voxel_map, new_voxel_map, self.voxel_map)
 
 def quat_to_rotvec(quat) -> Tuple[np.ndarray, DEGREE]:
     # hacky approach to keep the rotation axis as -y, i.e [0, -1, 0]
@@ -114,7 +109,6 @@ class MyActor(Actor):
         
         self.instance_goal_found = False
         
-        self.loop = 0
         self.max_instances = 0
 
         self.record_instance_ids = config.AGENT.SEMANTIC_MAP.record_instance_ids
