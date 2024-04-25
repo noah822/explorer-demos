@@ -1,0 +1,3 @@
+[submodule "agent/perception/detection/detic/Detic"]
+	path = agent/perception/detection/detic/Detic
+	url = https://github.com/facebookresearch/Detic.git
