@@ -12,7 +12,7 @@ import torch
 from torchvision.transforms import ToPILImage
 from tqdm import tqdm
 
-from agent.imagenav_agent.superglue import Matching
+from agent_sim.imagenav_agent.superglue import Matching
 from mapping.semantic.constants import MapConstants as MC
 from mapping.semantic.instance_tracking_modules import InstanceMemory
 
