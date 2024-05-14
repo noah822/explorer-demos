@@ -4,3 +4,6 @@
 [submodule "agent/agent_sim/imagenav_agent/SuperGluePretrainedNetwork"]
 	path = agent/agent_sim/imagenav_agent/SuperGluePretrainedNetwork
 	url = https://github.com/magicleap/SuperGluePretrainedNetwork.git
+[submodule "agent/third_party/detectron2"]
+	path = agent/third_party/detectron2
+	url = git@github.com:facebookresearch/detectron2.git
