@@ -157,8 +157,9 @@ class MyActor(Actor):
         self.panorama_rotate_steps = int(360 / config.ENVIRONMENT.turn_angle)
 
         # TODO: merge the two perception modules
-        self.segmentation = DeticPerception(vocabulary="coco", sem_gpu_id=device_id)
+        # self.segmentation = DeticPerception(vocabulary="coco", sem_gpu_id=device_id)
         self.semantic_module = SemanticMoudle(vocab='coco', device_id=device_id)  
+        self.segmentation = self.semantic_module.model
         self.cate_id_to_name = self.segmentation.category_id_to_name                  
         
         self.num_environments = config.NUM_ENVIRONMENTS
