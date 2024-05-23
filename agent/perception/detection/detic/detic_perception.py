@@ -156,6 +156,25 @@ class DeticPerception(PerceptionModule):
                 39: 14,  # bottle
                 0: 15, # categories that don't fall into the above ones
             }
+
+            self.category_id_to_name = {
+                0: 'chair',
+                1: 'couch',
+                2: 'plant',
+                3: 'bed',
+                4: 'toilet',
+                5: 'tv',
+                6: 'table',
+                7: 'oven',
+                8: 'sink',
+                9: 'refrigerator',
+                10: 'book',
+                11: 'clock',
+                12: 'vase',
+                13: 'cup',
+                14: 'bottle',
+                15: 'other things',
+            }
             # self.categories_mapping = {
             #     i: i for i in range(len(self.metadata.thing_classes))
             # }
