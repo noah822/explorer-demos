@@ -86,8 +86,12 @@ logging.getLogger('matplotlib.font_manager').disabled = True
 class Memory:
     voxel_map: np.ndarray
     # scene_pixel_features: np.ndarray
-    def update_voxel_map(self, new_voxel_map):
-        self.voxel_map = np.maximum(self.voxel_map, new_voxel_map) 
+    @staticmethod
+    def update_voxel_map(self, new_map):
+        # self.voxel_map = np.maximum(self.voxel_map, new_voxel_map) 
+        np.maximum(self.voxel_map[..., 1:], new_map[..., 1:], self.voxel_map[..., 1:])
+        mask = np.max(self.voxel_map[..., 1:], axis=-1) > 0.5
+        self.voxel_map[..., 0][mask] = 0
             
 
 def quat_to_rotvec(quat) -> Tuple[np.ndarray, DEGREE]:
